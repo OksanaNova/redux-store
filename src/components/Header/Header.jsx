@@ -49,11 +49,12 @@ const Header = () => {
                 </form>
 
                 <div className={styles.account}>
-                    <Link to={ROUTES.HOME}>
-                        <img src={FAVORITES} alt="favorites" />
+                    <Link to={ROUTES.HOME} className={styles.favorites}>
+                        <img src={FAVORITES} alt="favorites" className={styles.icon_fav} />
                     </Link>
-                    <Link to={ROUTES.HOME}>
-                        <img src={CART} alt="cart" />
+                    <Link to={ROUTES.CART} className={styles.cart}>
+                        <img src={CART} alt="cart" className={styles.icon_cart}/>
+                        <span className={styles.count}>2</span>
                     </Link>
                 </div>
             </div>

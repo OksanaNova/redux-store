@@ -1,15 +1,21 @@
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     max-width: 1274px;
     padding-top: 20px;
+    margin: 0 auto;
+}
+
+.logo {
+    flex: 1;
 }
 
 .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 3;
 }
 
 .user {
@@ -40,9 +46,16 @@
 }
 
 input {
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    padding: 10px;
     background-color: #191919;
     border: none;
     font-family: "Montserrat", sans-serif;
+}
+
+.account {
+    display: flex;
+    justify-content: space-between;
+    width: 65px;
 }
 
