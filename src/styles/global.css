@@ -1,4 +1,26 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
+    background-color: #212123;
+    color: white;
+}
+
+/* .app {
+    max-width: 1274px;
+    padding: 0 10px;
+    margin: 0 auto;
+} */
+
+.container {
+    display: flex;
 }
