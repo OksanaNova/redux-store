@@ -44,7 +44,7 @@ const Header = () => {
                     </div>
 
                     <div className={styles.box}>
-
+                        {/* штука для автонабора или поиска */}
                     </div>
                 </form>
 
@@ -52,6 +52,7 @@ const Header = () => {
                     <Link to={ROUTES.HOME} className={styles.favorites}>
                         <img src={FAVORITES} alt="favorites" className={styles.icon_fav} />
                     </Link>
+
                     <Link to={ROUTES.CART} className={styles.cart}>
                         <img src={CART} alt="cart" className={styles.icon_cart}/>
                         <span className={styles.count}>2</span>

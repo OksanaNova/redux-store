@@ -43,14 +43,19 @@
     background-color: #191919;
     padding: 10px 20px;
     border-radius: 10px;
+    position: relative;
 }
 
 input {
-    /* margin-left: 20px; */
-    padding: 10px;
+    padding: 5px 30px;
     background-color: #191919;
     border: none;
     font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.icon {
+    position: absolute;
 }
 
 .account {
@@ -58,4 +63,20 @@ input {
     justify-content: space-between;
     width: 65px;
 }
+
+.cart {
+    position: relative;
+}
+
+.count {
+    background-color: #6C3EB8;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    font-size: 12px;
+    bottom: -2px;
+    right: 0;
+    padding: 2px 3px;
+}
+
 
