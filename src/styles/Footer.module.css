@@ -5,4 +5,16 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    width: 80%;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+}
+
+.rights {
+    color: #576067;
+    font-size: 12px;
+}
+
+.rights a {
+    text-decoration: none;
 }
