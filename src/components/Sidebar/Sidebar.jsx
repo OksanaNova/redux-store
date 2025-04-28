@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
-        <div className={styles.sidebar}>
+        <section className={styles.sidebar}>
             <div className={styles.title}>CATEGORIES</div>
 
             <nav>
                 <ul className={styles.menu}>
                     <li>
-                        <NavLink>Link</NavLink>
+                        <NavLink to={`/categories/${1}`}>Link</NavLink>
                     </li>
                 </ul>
             </nav>
@@ -24,7 +24,7 @@ const Sidebar = () => {
                 </a>
             </div>
 
-        </div>
+        </section>
     )
 }
 
