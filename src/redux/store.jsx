@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import categoriesSlise from './categories/categoriesSlice';
+
 export const store = configureStore({
     reducer: {
-        categories: 'cat',
+        categories: categoriesSlise,
     },
     devTools: true,
 });
