@@ -16,25 +16,23 @@
     /* font-size: 14px; */
 }
 
+li {
+    list-style: none;
+}
+
 .link {
     text-decoration: none;
     color: #576067;
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
 .link:hover {
     color: white;
 }
 
-li {
-    list-style: none;
-}
-
-.category {
-    text-decoration: none;
-    color: white;
-    line-height: 1.7;
-    cursor: pointer;
+.active {
+    color: #8B57C6;
 }
 
 .footer {
@@ -43,6 +41,5 @@ li {
     width: 85%;
     position: absolute;
     bottom: 20px;
-    
 }
 
