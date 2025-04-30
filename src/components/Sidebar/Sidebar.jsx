@@ -4,7 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
 
-    const { list } = useSelector(({ categories }) => categories)
+    // const { list } = useSelector(({ categories }) => categories)
+
+    const categories = useSelector((state) => state.categories);
+    const list = categories.list;
 
     return (
         <section className={styles.sidebar}>
@@ -14,7 +17,7 @@ const Sidebar = () => {
                 <ul className={styles.menu}>
                     {list.map(({ id, name }) => (
                     <li key={id}>
-                        <NavLink to={`/categories/${id}`}>{name}</NavLink>
+                        <NavLink to={`/categories/${id}`} className={styles.category}>{name}</NavLink>
                     </li>
                     ))}
 
