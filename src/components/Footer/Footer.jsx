@@ -20,7 +20,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/oksana-smirnova-developer" 
                 target="_blank"
                 rel="noreferrer">
-                    Smirnova
+                    Oksana Smirnova
                 </a>
             </div>
 
