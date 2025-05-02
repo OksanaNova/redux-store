@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 
 import styles from '../../styles/Products.module.css';
 
-const Products = ({ title, products = [] }) => {
+const Products = ({ title, style = {}, products = [], amount }) => {
+
+    const list = products.filter((_, i) => i < amount);
+
     return (
-        <section>{title && <h2>{title}</h2>}
+        <section className={styles.products} style={style}>{title && <h2>{title}</h2>}
 
             <div className={styles.list}>
-            {products.map(({ id, images, title, category: { name: cat }, price }) => (
+            {list.map(({ id, images, title, category: { name: cat }, price }) => (
                 <Link to={`/products/${id}`} key={id} className={styles.product}>
                     <div 
                         className={styles.image} 
