@@ -5,7 +5,7 @@ import BG from '../../images/computer.png';
 const Poster = () => {
     return (
         <section className={styles.home}>
-            <div className={styles.title}>BIG SALE UP TO 50%</div>
+            <div className={styles.title}>BIG SALE 20%</div>
             <div className={styles.product}>
                 <div className={styles.text}>
                     <div className={styles.subtitle}>THE BESTSELLER OF 2025</div>
