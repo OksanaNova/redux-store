@@ -23,11 +23,11 @@ const App = () => {
         <div className="app">
             <Header />
 
-            <div className="container">
-                <Sidebar />
-                <AppRoutes />
-            </div>
-            
+        <div className="container">
+            <Sidebar />
+            <AppRoutes />
+        </div>
+
             <Footer />
         </div>
     )
