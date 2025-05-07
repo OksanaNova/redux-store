@@ -1,19 +1,14 @@
 .sidebar {
-    flex: 1;
-    padding: 20px;
-    height: 420px;
     background-color: #191919;
-    position: relative;
-}
-
-.title {
-    font-weight: 500;
-    font-size: 18px;
+    padding: 20px;
+    /* margin: 20px 0; */
+    border-radius: 5px;
 }
 
 .menu {
-    padding: 0;
-    /* font-size: 14px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 li {
@@ -23,8 +18,10 @@ li {
 .link {
     text-decoration: none;
     color: #576067;
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px;
 }
 
 .link:hover {
@@ -33,13 +30,5 @@ li {
 
 .active {
     color: #8B57C6;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-    position: absolute;
-    bottom: 20px;
 }
 

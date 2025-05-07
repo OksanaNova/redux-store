@@ -14,10 +14,12 @@ const Home = () => {
 
 
     return (
-            <div className={styles.home}>
-                <Poster />
-                <Products products={list} amount={5} title="Trending"/>
-            </div>
+        <div>
+            <Poster />
+    
+            <Products products={list} amount={5} title="Trending"/>
+            
+        </div>     
     )
 }
 

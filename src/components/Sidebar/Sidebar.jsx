@@ -10,7 +10,6 @@ const Sidebar = () => {
 
     return (
         <section className={styles.sidebar}>
-            <div className={styles.title}>CATEGORIES</div>
 
             <nav>
                 <ul className={styles.menu}>
@@ -26,16 +25,6 @@ const Sidebar = () => {
 
                 </ul>
             </nav>
-
-            <div className={styles.footer}>
-                <a href="/help" target='_blank' className={styles.link}>
-                    Help
-                </a>
-
-                <a href="/terms" target='_blank' className={styles.link} style={{textDecoration: 'underline'}}>
-                    Terms & Conditions
-                </a>
-            </div>
 
         </section>
     )
