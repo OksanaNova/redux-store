@@ -12,9 +12,9 @@ const Products = ({ title, style = {}, products = [], amount }) => {
             <div className={styles.list}>
             {list.map(({ id, images, title, category: { name: cat }, price }) => (
                 <Link to={`/products/${id}`} key={id} className={styles.product}>
-                    <div 
-                        className={styles.image} 
-                        style={{ backgroundImage: `url(${images[0]})` }} />
+                    <div className={styles.image}>
+                        <img src={images[0]} alt="priduct-image" height="180px" />
+                    </div>
 
                     <div className={styles.wrapper}>
                         <h3 className={styles.title}>{title}</h3>
@@ -34,8 +34,12 @@ const Products = ({ title, style = {}, products = [], amount }) => {
             </div>
 
 
+
+
         </section>
     )
 }
 
 export default Products
+
+// style={{ backgroundImage: `url(${images[0]})` }} 

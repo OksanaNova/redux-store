@@ -1,8 +1,9 @@
 .products {
     background-color: #191919;
+    margin: 0 auto;
     padding: 20px 40px;
     margin-top: 20px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 h2 {
@@ -11,18 +12,22 @@ h2 {
 
 .list {
     display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    
 }
 
 .product {
     background-color: #212123;
     /* padding: 10px; */
-    border-radius: 10px;
+    /* margin: 5px; */
+    border-radius: 15px;
     text-decoration: none;
 }
 
-.image {
-    width: 230px;
-    height: 110px;
+.image img {
+    width: 100%;
+    /* min-height: 110px; */
     /* border-radius: 10px; */
 }
 
