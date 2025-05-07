@@ -5,18 +5,26 @@
     align-items: center;
     margin: 0 auto;
     width: 80%;
-    padding: 10px 30px;
-    /* margin-bottom: 20px; */
+    padding: 10px 0;
+    margin-bottom: 10px;
     margin-top: 20px;
     border-radius: 5px;
 }
 
 .rights {
     color: #576067;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .rights a {
     text-decoration: none;
     color: #8B57C6;
+}
+
+.logo {
+    margin-left: 25px;
+}
+    
+.socials {
+    margin-right: 25px;
 }
