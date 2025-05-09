@@ -55,6 +55,34 @@
     width: 400px;
 }
 
+.banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/bannerImg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+.banner button {
+    position: absolute;
+    z-index: 2;
+    right: 100px;
+    bottom: 50px;
+    font-size: 20px;
+    padding: 15px 30px;
+}
+
 @media all and (max-width: 1700px) {
 
     .title {

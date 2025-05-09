@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Poster from "../Poster/Poster";
 import Products from "../Products/Products";
 import Categories from "../Categories/Categories";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
 
@@ -27,6 +28,7 @@ const Home = () => {
 
             <Categories categories={myCategories} amount={5} title="Worth seeing" />
             
+            <Banner />
         </div>     
     )
 }
