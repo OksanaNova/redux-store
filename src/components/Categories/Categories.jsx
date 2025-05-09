@@ -7,14 +7,14 @@ const Categories = ({ title, categories = [], amount }) => {
     const list = categories.filter((_, i) => i < amount);
 
     return (
-        <section className={styles.section}>
+        <section className={styles.categories}>
             <h2>{title}</h2>
 
             <div className={styles.list}>
                 {list.map(({ id, name, image}) => (
                     <Link to={`/categories/${id}`} key={id} className={styles.item}>
                         <div className={styles.image}>
-                            <img src={image} alt="priduct-image" height="180px" />
+                            <img src={image} alt="product-image" />
                         </div>
                         <h3 className={styles.title}>{name}</h3>
                     </Link>

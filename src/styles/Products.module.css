@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 20px 40px;
     margin-top: 20px;
+    border-radius: 5px;
     /* width: 100%; */
 }
 
@@ -14,7 +15,6 @@ h2 {
     display: flex;
     justify-content: space-evenly;
     gap: 10px;
-    
 }
 
 .product {
