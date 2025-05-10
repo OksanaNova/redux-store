@@ -13,7 +13,7 @@ const Products = ({ title, style = {}, products = [], amount }) => {
             {list.map(({ id, images, title, category: { name: cat }, price }) => (
                 <Link to={`/products/${id}`} key={id} className={styles.product}>
                     <div className={styles.image}>
-                        <img src={images[0]} alt="priduct-image" height="180px" />
+                        <img src={images[0]} alt="priduct-image" />
                     </div>
 
                     <div className={styles.wrapper}>
