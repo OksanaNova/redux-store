@@ -15,9 +15,7 @@ const Products = ({ title, style = {}, products = [], amount }) => {
                     <div 
                         className={styles.image}
                         style={{ backgroundImage: `url(${images[0]})` }}
-                    >
-                        {/* <img src={images[0]} alt="priduct-image" /> */}
-                    </div>
+                    />
 
                     <div className={styles.wrapper}>
                         <h3 className={styles.title}>{title}</h3>
