@@ -1,11 +1,21 @@
 import { ROUTES } from "../../utils/routes";
 import { Link } from "react-router-dom";
 
+import { useEffect, useState } from "react";
+
 import styles from "../../styles/Product.module.css";
+
 
 const Product = ({ title, price, images, description }) => {
 
-    const currentImage = images[0];
+    const [currentImage, setCurrentImage] = useState();
+    const [currentSize, setCurrentSize] = useState();
+
+    useEffect(() => {
+        if(!images.length) return;
+
+        setCurrentImage(images[0])
+    }, [images])
 
     const SIZES = [8, 8.5, 9];
 
@@ -23,8 +33,7 @@ const Product = ({ title, price, images, description }) => {
                             key={i}
                             className={styles.image}
                             style={{ backgroundImage: `url(${image})`}}
-                            // onClick images
-                            onClick={() => {}}
+                            onClick={() => setCurrentImage(image)}
                         />
                     ))}
                 </div>
@@ -44,8 +53,11 @@ const Product = ({ title, price, images, description }) => {
                     <span>Sizes:</span>
                     <div className={styles.list}>
                         {SIZES.map(size => (
-                            // onClick SIZES
-                            <div onClick={() => {}} className={`${styles.size}`} key={size}>
+                            <div 
+                                onClick={() => setCurrentSize(size)} 
+                                className={`${styles.size} ${currentSize === size ? styles.active : "" }`} 
+                                key={size}
+                            >
                                 {size}
                             </div>
                         ))}
@@ -55,7 +67,11 @@ const Product = ({ title, price, images, description }) => {
                 <p className={styles.description}>{description}</p>
 
                 <div className={styles.actions}>
-                    <button className={styles.add}>Add to cart</button>
+                    {/* check disabled button */}
+                    <button className={styles.add} disabled={!currentSize} >
+                        Add to cart
+                    </button>
+                    
                     <button className={styles.favorite}>Add to favorites</button>
                 </div>  
 

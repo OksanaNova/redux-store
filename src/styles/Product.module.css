@@ -10,7 +10,7 @@
 
 .images {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 20px;
     width: 50%;
 }
@@ -25,23 +25,19 @@
 
 .images-list {
     display: flex;
+    flex-direction: column;
     gap: 10px;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 .image {
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 150px;
     flex-shrink: 0;
     background-size: cover;
     background-position: center;
     border-radius: 5px;
     cursor: pointer;
-  /* transition: transform 0.2s ease; */
-}
-
-.image:hover {
-    transform: scale(1.1);
 }
 
 .info {
@@ -90,7 +86,7 @@
     color: #191919;
 }
 
-.size.active {
+.active {
     background-color: #6C3EB8;
 }
 
