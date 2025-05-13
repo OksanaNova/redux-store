@@ -25,9 +25,9 @@ const userSlice = createSlice({
     }, 
 
     reducers: {
-        addToCart: (state, { payload }) => {
+        addItemToCart: (state, { payload }) => {
             let newCart = [...state.cart];
-            const found = state.cart.find(({ id }) => id === payload.id);
+            const found = state.cart.find((item) => item.id === payload.id);
 
             if(found) {
                 newCart = newCart.map((item) => {
@@ -35,8 +35,8 @@ const userSlice = createSlice({
                     ? { ...item, quantity: payload.quantity || item.quantity + 1 } 
                     : item;
                 }) 
-            } else newCart.push({ payload, quantity: 1})
-
+            } else newCart.push({ ...payload, quantity: 1})
+// добавила троеточие перед пэйлоад 
             state.cart = newCart;
         }
     },
@@ -54,5 +54,7 @@ const userSlice = createSlice({
         // });
     },
 });
+
+export const { addItemToCart } = userSlice.actions;
 
 export default userSlice.reducer;
