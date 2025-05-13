@@ -1,0 +1,154 @@
+.product {
+    display: flex;
+    gap: 40px;
+    padding: 20px 40px;
+    margin-top: 20px;
+    background-color: #191919;
+    color: #F6F6F7;
+    border-radius: 5px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.current {
+    width: 100%;
+    padding-top: 75%; 
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.images-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.image {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    cursor: pointer;
+  /* transition: transform 0.2s ease; */
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F6F6F7;
+}
+
+.color span,
+.sizes span {
+    font-weight: 500;
+    margin-right: 8px;
+    color: #576067; 
+}
+
+.sizes .list {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.size {
+    padding: 6px 12px;
+    border: 1px solid #F6F6F7;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: #fff;
+}
+
+.size:hover {
+    background-color: #fff;
+    color: #191919;
+}
+
+.size.active {
+    background-color: #6C3EB8;
+}
+
+.description {
+    color: #B8B8B8;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.add {
+    font-family: "Montserrat", sans-serif;
+    background-color: #6C3EB8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.add:hover {
+    background-color: #8B57C6;
+}
+
+.favorite {
+    font-family: "Montserrat", sans-serif;
+    background-color: #576067;
+    color: #B8B8B8;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.favorite:hover {
+    color: #fff;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    font-size: 14px;
+    color: #B8B8B8;
+}
+
+.bottom a {
+  color: #B8B8B8;
+  font-size: 14px;
+}
