@@ -34,7 +34,7 @@ const productsSlice = createSlice({
 
         getRelatedProducts: (state, action) => {
 
-            const list = state.list.filter(({ category: { id } }) => id === action.payload )
+            const list = state.list.filter((item) => item.category.id === action.payload )
             state.related = shuffle(list);
         }
     },
