@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 import styles from "../../styles/Product.module.css";
 import { addItemToCart } from "../../redux/user/userSlice";
-
+import { addItemToFavorites } from "../../redux/user/userSlice";
 
 
 const Product = (item) => {
@@ -28,6 +28,10 @@ const Product = (item) => {
 
     const addToCart = () => {
         dispatch(addItemToCart(item));
+    }
+
+    const addToFavorites = () => {
+        dispatch(addItemToFavorites(item));
     }
 
     return (
@@ -86,7 +90,11 @@ const Product = (item) => {
                         Add to cart
                     </button>
                     
-                    <button className={styles.favorite}>Add to favorites</button>
+                    <button 
+                        onClick={addToFavorites}
+                        className={styles.favorite}>
+                        Add to favorites
+                    </button>
                 </div>  
 
                 <div className={styles.bottom}>
