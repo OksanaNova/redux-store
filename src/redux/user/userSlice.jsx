@@ -36,7 +36,7 @@ const userSlice = createSlice({
                     : item;
                 }) 
             } else newCart.push({ ...payload, quantity: 1})
-// добавила троеточие перед пэйлоад 
+
             state.cart = newCart;
         }
     },

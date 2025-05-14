@@ -4,7 +4,9 @@ import { useEffect } from "react";
 import { useGetProductQuery } from "../../redux/api/apiSlice";
 
 import { ROUTES } from "../../utils/routes";
+
 import Product from "./Product";
+import Products from "./Products";
 
 const SingleProduct = () => {
 
@@ -25,6 +27,7 @@ const SingleProduct = () => {
         ) : (
             <>
                 <Product {...data} />
+                {/* <Products products={list} amount={5} title="Related products"/> */}
             </>
         )
 

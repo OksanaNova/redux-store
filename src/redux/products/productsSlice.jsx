@@ -2,6 +2,7 @@ import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { BASE_URL } from "../../utils/constants";
+import { shuffle } from "../../utils/common";
 
 
 export const getProducts = createAsyncThunk('products/getProducts', 
@@ -22,13 +23,19 @@ const productsSlice = createSlice({
     initialState: {
         list: [],
         filtered: [],
-        // related: [],
+        related: [],
         isLoading: false
     }, 
 
     reducers: {
         filterByPrice: (state, action) => {
             state.filtered = state.list.filter((product) => product.price < action.payload); 
+        }, 
+
+        getRelatedProducts: (state, action) => {
+
+            const list = state.list.filter(({ category: { id } }) => id === action.payload )
+            state.related = shuffle(list);
         }
     },
 
@@ -46,6 +53,6 @@ const productsSlice = createSlice({
     },
 });
 
-export const { filterByPrice } = productsSlice.actions;
+export const { filterByPrice, getRelatedProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;
