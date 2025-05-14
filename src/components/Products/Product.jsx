@@ -1,6 +1,9 @@
 import { ROUTES } from "../../utils/routes";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
+import Swal from "sweetalert2";
 
 import { useEffect, useState } from "react";
 
@@ -27,10 +30,22 @@ const Product = (item) => {
     const SIZES = [8, 8.5, 9];
 
     const addToCart = () => {
+        if(!currentSize) {
+            Swal.fire("Please select a size before adding to cart");
+            return;
+        }
         dispatch(addItemToCart(item));
     }
 
+    const favorites = useSelector((state) => state.user.favorites);
+
     const addToFavorites = () => {
+        const alreadyInFavorites = favorites.some((element) => element.id === item.id);
+
+        if(alreadyInFavorites) {
+            Swal.fire("This item is already in your favorites 💖");
+            return;
+        }
         dispatch(addItemToFavorites(item));
     }
 
@@ -82,11 +97,9 @@ const Product = (item) => {
                 <p className={styles.description}>{description}</p>
 
                 <div className={styles.actions}>
-                    {/* check disabled button */}
                     <button
                         onClick={addToCart}
-                        className={styles.add} 
-                        disabled={!currentSize} >
+                        className={styles.add}>
                         Add to cart
                     </button>
                     
