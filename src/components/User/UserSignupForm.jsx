@@ -16,6 +16,12 @@ const userSignupForm = () => {
         setValues({...values, [name]: value })
     }
 
+    // const handleChange = (event) => {
+    //     const value = event.target.value;
+    //     const name = event.target.name;
+    //     setValues({ ...values, [name]: value })
+    // }
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.close}>
@@ -32,9 +38,9 @@ const userSignupForm = () => {
                     type="email" 
                     placeholder="Your email" 
                     name="email" 
-                    value="" 
+                    value={values.email} 
                     autoComplete="off" 
-                    onChange={() => {}}
+                    onChange={() => {handleChange}}
                     required/>
                 </div>
 
@@ -43,9 +49,9 @@ const userSignupForm = () => {
                     type="name" 
                     placeholder="Your name" 
                     name="name" 
-                    value="" 
+                    value={values.namel}  
                     autoComplete="off" 
-                    onChange={() => {}}
+                    onChange={() => {handleChange}}
                     required/>
                 </div>
 
@@ -54,9 +60,9 @@ const userSignupForm = () => {
                     type="password" 
                     placeholder="Your password" 
                     name="password" 
-                    value="" 
+                    value={values.password}  
                     autoComplete="off" 
-                    onChange={() => {}}
+                    onChange={() => {handleChange}}
                     required/>
                 </div>
 
@@ -65,9 +71,9 @@ const userSignupForm = () => {
                     type="avatar" 
                     placeholder="Your avatar" 
                     name="avatar" 
-                    value="" 
+                    value={values.avatar}  
                     autoComplete="off" 
-                    onChange={() => {}}
+                    onChange={() => {handleChange}}
                     required/>
                 </div>
 

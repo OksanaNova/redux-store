@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-
-import styles from '../../styles/Header.module.css';
+import { useDispatch, useSelector } from "react-redux";
 
 import { ROUTES } from '../../utils/routes';
+
+import styles from '../../styles/Header.module.css';
 
 import LOGO from '../../images/logo.svg';
 import AVATAR from '../../images/avatar.svg';
@@ -10,7 +11,19 @@ import SEARCH from '../../images/search.svg';
 import FAVORITES from '../../images/heart.svg';
 import CART from '../../images/cart.svg';
 
+import { toggleForm } from "../../redux/user/userSlice";
+
+
 const Header = () => {
+
+    const dispatch = useDispatch();
+
+    const { currentUser } = useSelector(({ user }) => user );
+
+    const handleClick = () => {
+        if(!currentUser) dispatch(toggleForm(true));
+    }
+
     return (
         <div className={styles.header}>
 
@@ -21,10 +34,11 @@ const Header = () => {
             </div>
 
             <div className={styles.info}>
-                <div className={styles.user}>
+                <div className={styles.user} onClick={handleClick}>
                     <div 
                         className={styles.avatar} 
-                        style={{ backgroundImage: `url(${AVATAR})` }}>...</div>
+                        style={{ backgroundImage: `url(${AVATAR})` }} 
+                    />
                     <div className={styles.username}>Guest</div>
                 </div>
 
