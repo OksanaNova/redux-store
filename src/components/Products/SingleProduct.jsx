@@ -18,9 +18,10 @@ const SingleProduct = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // const { related } = useSelector(({ products }) => products);
-    const productsState = useSelector((state) => state.products);
-    const related = productsState.related;
+    const { list, related } = useSelector(({ products }) => products);
+    // const productsState = useSelector((state) => state.products);
+    // const related = productsState.related;
+    // const list = productsState.list;
 
     const { data, isLoading, isFetching, isSuccess } = useGetProductQuery({ id });
 
@@ -31,10 +32,12 @@ const SingleProduct = () => {
     }, [isLoading, isFetching, isSuccess]);
 
     useEffect(() => {
+        if(!data || !list.length) return;
+
         if(data) {
             dispatch(getRelatedProducts(data.category.id));
         }
-    }, [data])
+    }, [data, dispatch, list.length])
 
     
     return !data ? (
