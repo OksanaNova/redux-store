@@ -25,7 +25,7 @@ const UserSignupForm = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.close}>
-                <img src={CANCEL} alt="cancel-btn" width="20px"/>
+                <img src={CANCEL}  alt="cancel-btn" width="20px"/>
             </div>
 
             <div className={styles.title}>
