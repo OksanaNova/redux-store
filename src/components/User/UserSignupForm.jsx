@@ -3,7 +3,7 @@ import styles from "../../styles/User.module.css";
 import CANCEL from '../../images/cancel.svg';
 import { useState } from "react";
 
-const userSignupForm = () => {
+const UserSignupForm = () => {
 
     const [values, setValues] = useState({
         name: "",
@@ -88,4 +88,4 @@ const userSignupForm = () => {
     )
 }
 
-export default userSignupForm
+export default UserSignupForm
