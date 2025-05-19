@@ -3,7 +3,7 @@ import styles from "../../styles/User.module.css";
 import CANCEL from '../../images/cancel.svg';
 import { useState } from "react";
 
-const UserSignupForm = () => {
+const UserSignupForm = ({ closeForm }) => {
 
     const [values, setValues] = useState({
         name: "",
@@ -24,7 +24,7 @@ const UserSignupForm = () => {
 
     return (
         <div className={styles.wrapper}>
-            <div className={styles.close}>
+            <div className={styles.close} onClick={closeForm}>
                 <img src={CANCEL}  alt="cancel-btn" width="20px"/>
             </div>
 
