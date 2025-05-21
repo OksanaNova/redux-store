@@ -35,9 +35,9 @@ const Profile = () => {
     }
 
     return (
-        <section>
+        <section className={styles.profile}>
             {!currentUser ? (<span>You need to log in</span>) : (
-                <form className={styles.profile} onSubmit={handleSubmit}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.group}>
                         <input 
                         type="email" 

@@ -1,23 +1,20 @@
 .profile {
     margin: 40px auto;
+    /* box-sizing: border-box; */
+}
+
+.form {
     padding: 30px;
     background-color: #191919;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* width: 90%; */
+    /* box-sizing: border-box; */
 }
 
 .group {
     margin-bottom: 20px;
-    /* width: 100%; */
-
 }
 
 .group input {
-    width: 100%;
     padding: 10px 20px;
     font-size: 14px;
     border: none;
@@ -25,7 +22,8 @@
     background-color: #212121;
     color: #fff;
     outline: none;
-    /* transition: border 0.3s ease; */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .group input::placeholder {
@@ -37,7 +35,7 @@
 }
 
 .submit {
-    /* width: 80%; */
+    width: 100%;
     padding: 10px 20px;
     background-color: #9147ff;
     color: white;
@@ -46,7 +44,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    /* transition: background-color 0.3s ease; */
 }
 
 .submit:hover {
