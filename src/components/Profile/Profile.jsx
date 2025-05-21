@@ -35,7 +35,7 @@ const Profile = () => {
     }
 
     return (
-        <section className={styles.profile}>
+        <section>
             {!currentUser ? (<span>You need to log in</span>) : (
                 <form className={styles.profile} onSubmit={handleSubmit}>
                     <div className={styles.group}>
@@ -47,46 +47,46 @@ const Profile = () => {
                         autoComplete="off" 
                         onChange={handleChange}
                         required/>
-                        </div>
+                    </div>
                 
-                        <div className={styles.group}>
-                            <input 
-                            type="name" 
-                            placeholder="Your name" 
-                            name="name" 
-                            value={values.name}  
-                            autoComplete="off" 
-                            onChange={handleChange}
-                            required/>
-                        </div>
+                    <div className={styles.group}>
+                        <input 
+                        type="name" 
+                        placeholder="Your name" 
+                        name="name" 
+                        value={values.name}  
+                        autoComplete="off" 
+                        onChange={handleChange}
+                        required/>
+                    </div>
                 
-                        <div className={styles.group}>
-                            <input 
-                                type="password" 
-                                placeholder="Your password" 
-                                name="password" 
-                                value={values.password}  
-                                autoComplete="off" 
-                                onChange={handleChange}
-                                required/>
-                            </div>
+                    <div className={styles.group}>
+                        <input 
+                        type="password" 
+                        placeholder="Your password" 
+                        name="password" 
+                        value={values.password}  
+                        autoComplete="off" 
+                        onChange={handleChange}
+                        required/>
+                    </div>
                 
-                            <div className={styles.group}>
-                                <input 
-                                type="avatar" 
-                                placeholder="Your avatar" 
-                                name="avatar" 
-                                value={values.avatar}  
-                                autoComplete="off" 
-                                onChange={handleChange}
-                                required/>
-                            </div>
+                    <div className={styles.group}>
+                        <input 
+                        type="avatar" 
+                        placeholder="Your avatar" 
+                        name="avatar" 
+                        value={values.avatar}  
+                        autoComplete="off" 
+                        onChange={handleChange}
+                        required/>
+                    </div>
 
-                            <button type="submit" className={styles.submit}>
-                                Update
-                            </button>
+                    <button type="submit" className={styles.submit}>
+                        Update
+                    </button>
 
-                        </form>
+                </form>
             )}
         </section>
     )
