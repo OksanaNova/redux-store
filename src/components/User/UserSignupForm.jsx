@@ -1,7 +1,5 @@
 import styles from "../../styles/User.module.css";
 
-import Swal from "sweetalert2";
-
 import CANCEL from '../../images/cancel.svg';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -15,7 +13,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
         name: "",
         email: "",
         password: "",
-        avatar: ""
+        avatar: "",
     });
 
     const handleChange = ({ target: {value, name} }) => {
@@ -31,13 +29,9 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const isNotEmpty = Object.values(values).some(val => val);
+        const isNotEmpty = Object.values(values).every((val) => val);
 
-        if(!isNotEmpty) {
-            // проверить работает или нет
-            Swal.fire("Please fill in all fields");
-            return;
-        };
+        if(!isNotEmpty) return;
 
         dispatch(createUser(values));
         closeForm();
@@ -49,9 +43,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
                 <img src={CANCEL}  alt="cancel-btn" width="20px"/>
             </div>
 
-            <div className={styles.title}>
-                Sign Up
-            </div>
+            <div className={styles.title}>Sign Up</div>
 
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.group}>

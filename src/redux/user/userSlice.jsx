@@ -31,7 +31,8 @@ export const loginUser = createAsyncThunk(
             return login.data;
         } catch(err) {
             console.log(err);
-            return thunkAPI.rejectWithValue(err);
+            return thunkAPI.rejectWithValue(
+                err.response?.data?.message || err.message || "Something went wrong");
         }
     }
 );
@@ -48,7 +49,7 @@ const userSlice = createSlice({
         favorites: [],
         isLoading: false,
         formType: "signup",
-        showForm: false
+        showForm: false,
     }, 
 
     reducers: {

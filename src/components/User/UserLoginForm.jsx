@@ -1,7 +1,5 @@
 import styles from "../../styles/User.module.css";
 
-import Swal from "sweetalert2";
-
 import CANCEL from '../../images/cancel.svg';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -13,7 +11,7 @@ const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
 
     const [values, setValues] = useState({
         email: "",
-        password: ""
+        password: "",
     });
 
     const handleChange = ({ target: {value, name} }) => {
@@ -23,10 +21,10 @@ const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const isNotEmpty = Object.values(values).some(val => val);
+        const isNotEmpty = Object.values(values).every((val) => val);
 
         if(!isNotEmpty) return;
-
+console.log("Login values:", values);
         dispatch(loginUser(values));
         closeForm();
     };
@@ -37,9 +35,7 @@ const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
                 <img src={CANCEL}  alt="cancel-btn" width="20px"/>
             </div>
 
-            <div className={styles.title}>
-                Log in
-            </div>
+            <div className={styles.title}>Log in</div>
 
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.group}>
