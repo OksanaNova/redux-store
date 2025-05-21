@@ -24,8 +24,8 @@ export const loginUser = createAsyncThunk(
             const res = await axios.post(`${BASE_URL}/auth/login`, payload);
             const login = await axios(`${BASE_URL}/auth/profile`, {
                 headers: {
-                    "Authorization": `Bearer ${res.access_token}`
-                }
+                    Authorization: `Bearer ${res.data.access_token}`,
+                },
             });
 
             return login.data;
@@ -38,7 +38,7 @@ export const loginUser = createAsyncThunk(
 
 const addCurrentUser = (state, { payload }) => {
     state.currentUser = payload;
-}
+};
 
 const userSlice = createSlice({
     name: 'user',
@@ -74,6 +74,10 @@ const userSlice = createSlice({
 
         toggleForm: (state, { payload }) => {
             state.showForm = payload;
+        },
+
+        toggleFormType: (state, { payload }) => {
+            state.formType = payload;
         }
     },
 
@@ -83,6 +87,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { addItemToCart, addItemToFavorites, toggleForm } = userSlice.actions;
+export const { addItemToCart, addItemToFavorites, toggleForm, toggleFormType } = userSlice.actions;
 
 export default userSlice.reducer;

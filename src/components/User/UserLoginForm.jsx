@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/user/userSlice";
 
-const UserLoginForm = ({ closeForm }) => {
+const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
 
     const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ const UserLoginForm = ({ closeForm }) => {
             </div>
 
             <div className={styles.title}>
-                Sign Up
+                Log in
             </div>
 
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -64,7 +64,12 @@ const UserLoginForm = ({ closeForm }) => {
                     required/>
                 </div>
 
-                <div className={styles.link}>Create an account</div>
+                <div 
+                    className={styles.link}
+                    onClick={() => toggleCurrentFormType('signup')}
+                >
+                    Create an account
+                </div>
 
                 <button type="submit" className={styles.submit}>
                     Log in
