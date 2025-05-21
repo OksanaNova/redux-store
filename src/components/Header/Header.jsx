@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ROUTES } from '../../utils/routes';
@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 const Header = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { currentUser } = useSelector(({ user }) => user );
 
@@ -31,6 +32,7 @@ const Header = () => {
 
     const handleClick = () => {
         if(!currentUser) dispatch(toggleForm(true));
+        else navigate(ROUTES.PROFILE);
     }
 
     return (
