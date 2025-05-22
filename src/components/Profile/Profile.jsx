@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { updateUser } from "../../redux/user/userSlice";
@@ -19,6 +19,13 @@ const Profile = () => {
         password: "",
         avatar: "",
     });
+
+    useEffect(() => {
+        if(!currentUser) return;
+
+        setValues(currentUser);
+
+    }, [currentUser]);
     
     const handleChange = ({ target: {value, name} }) => {
         setValues({...values, [name]: value })

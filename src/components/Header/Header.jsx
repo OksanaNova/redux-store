@@ -20,6 +20,8 @@ const Header = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const [searchValue, setSearchValue] = useState("");
+
     const { currentUser } = useSelector(({ user }) => user );
 
     const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
@@ -33,6 +35,10 @@ const Header = () => {
     const handleClick = () => {
         if(!currentUser) dispatch(toggleForm(true));
         else navigate(ROUTES.PROFILE);
+    }
+
+    const handleSearch = ({ target: { value } }) => {
+        setSearchValue(value);
     }
 
     return (
@@ -64,8 +70,8 @@ const Header = () => {
                         name="search" 
                         placeholder="Search for anything..." 
                         autoComplete="off"
-                        value=""
-                        onChange={() => {}}/>
+                        value={searchValue}
+                        onChange={handleSearch}/>
                     </div>
 
                     <div className={styles.box}>
