@@ -13,6 +13,7 @@ import CART from '../../images/cart.svg';
 
 import { toggleForm } from "../../redux/user/userSlice";
 import { useEffect, useState } from "react";
+import { useGetProductsQuery } from "../../redux/api/apiSlice";
 
 
 const Header = () => {
@@ -25,6 +26,9 @@ const Header = () => {
     const { currentUser } = useSelector(({ user }) => user );
 
     const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
+
+    const { data, isLoading } = useGetProductsQuery({ title: searchValue });
+    console.log(data)
 
     useEffect(() => {
         if(!currentUser) return;
@@ -74,9 +78,27 @@ const Header = () => {
                         onChange={handleSearch}/>
                     </div>
 
-                    <div className={styles.box}>
-                        {/* штука для автонабора или поиска */}
-                    </div>
+                    {searchValue && <div className={styles.box}>
+                        {isLoading ? 'Loading...' : !data.length ? 'No results' : (
+                            data.map(({ title, images, id }) => {
+                                return (
+                                    <Link 
+                                    to={`/products/${id}`} 
+                                    onClick={() => setSearchValue("")} 
+                                    key={id}
+                                    className={styles.item}
+                                    >
+                                        <div 
+                                        className={styles.image}
+                                        style={{ backgroundImage: `url(${images[0]})` }}
+                                        />
+                                        <div className={styles.title}>{title}</div>
+                                    </Link>
+                                )
+                            })
+                        )}
+                        </div>}
+
                 </form>
 
                 <div className={styles.account}>
