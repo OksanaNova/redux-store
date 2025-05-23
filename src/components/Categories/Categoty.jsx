@@ -10,12 +10,18 @@ const Category = () => {
 
     const { id } = useParams();
 
-    const defaultParams = {
+    const defaultValues = {
         title: "",
         price_min: 0,
-        price_max: 0,
-        categoryId: id
+        price_max: 0
     }
+
+    const defaultParams = {
+        title: "",
+        ...defaultValues
+    };
+
+    const [values, setValues] = useState(defaultValues);
 
     const [params, setParams] = useState(defaultParams);
 
@@ -26,7 +32,10 @@ const Category = () => {
     }, [id]);
 
     const { data, isLoading, isSuccess } = useGetProductsQuery(params);
-    console.log(data);
+
+    const handleChange = ({ target: {value, name} }) => {
+        setValues({...values, [name]: value })
+    };
 
     return (
         <section className={styles.wrapper}>
@@ -41,8 +50,8 @@ const Category = () => {
                     type="text"
                     name="title" 
                     placeholder="Product name"
-                    onChange={() => {}}
-                    value={params.title}
+                    onChange={handleChange}
+                    value={values.title}
                     />
                 </div>
 
@@ -51,8 +60,8 @@ const Category = () => {
                     type="numder"
                     name="price_min" 
                     placeholder="0"
-                    onChange={() => {}}
-                    value={params.price_min}
+                    onChange={handleChange}
+                    value={values.price_min}
                     />
                 </div>
 
@@ -61,8 +70,8 @@ const Category = () => {
                     type="numder"
                     name="price_max" 
                     placeholder="0"
-                    onChange={() => {}}
-                    value={params.price_max}
+                    onChange={handleChange}
+                    value={values.price_max}
                     />
                 </div>
 
