@@ -21,12 +21,17 @@ const Category = () => {
 
     const defaultParams = {
         title: "",
+        limit: 5,
+        offset: 0,
         ...defaultValues
     };
 
     const [cat, setCat] = useState('');
+    const [items, setItems] = useState([]);
     const [values, setValues] = useState(defaultValues);
     const [params, setParams] = useState(defaultParams);
+
+    const { data, isLoading, isSuccess } = useGetProductsQuery(params);
 
     useEffect(() => {
         if(!id) return;
@@ -35,14 +40,22 @@ const Category = () => {
     }, [id]);
 
     useEffect(() => {
+        if(!isLoading) return;
+
+        const products = Object.values(data);
+
+        if(!products.length) return;
+
+        setItems((_items) => [..._items, ...products])
+    }, [data, isLoading])
+
+    useEffect(() => {
         if(!id || !list.length) return;
         
         const { name } = list.find((item) => item.id === id * 1);
 
         setCat(name);
     }, [list, id])
-
-    const { data, isLoading, isSuccess } = useGetProductsQuery(params);
 
     const handleChange = ({ target: {value, name} }) => {
         setValues({...values, [name]: value });
@@ -106,9 +119,9 @@ const Category = () => {
             ) : (
                 <Products 
                 title="" 
-                products={data} 
+                products={items} 
                 style={{ padding: 0 }} 
-                amount={20}/>
+                amount={items.length}/>
             )}
 
         </section>
