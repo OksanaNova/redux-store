@@ -5,8 +5,10 @@ export const buildUrl = (url, params) => {
 
     Object.entries(params).forEach(([key, value], i) => {
         const sign = i===0 ? '?' : '&';
-        urlWithParams += `${sign}${key} = ${value}`;
+        urlWithParams += `${sign}${key}=${value}`;
     });
 
     return urlWithParams;
 }
+
+

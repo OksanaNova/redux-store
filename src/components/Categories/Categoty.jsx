@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useGetProductsQuery } from "../../redux/api/apiSlice";
 
 import styles from "../../styles/Category.module.css";
 
 import Products from "../Products/Products";
 
+
 const Category = () => {
 
     const { id } = useParams();
+    const { list } = useSelector(({ categories }) => categories);
 
     const defaultValues = {
         title: "",
@@ -21,8 +24,8 @@ const Category = () => {
         ...defaultValues
     };
 
+    const [cat, setCat] = useState('');
     const [values, setValues] = useState(defaultValues);
-
     const [params, setParams] = useState(defaultParams);
 
     useEffect(() => {
@@ -31,19 +34,33 @@ const Category = () => {
         setParams({ ...defaultParams, categoryId: id })
     }, [id]);
 
+    useEffect(() => {
+        if(!id || !list.length) return;
+        
+        const { name } = list.find((item) => item.id === id * 1);
+
+        setCat(name);
+    }, [list, id])
+
     const { data, isLoading, isSuccess } = useGetProductsQuery(params);
 
     const handleChange = ({ target: {value, name} }) => {
-        setValues({...values, [name]: value })
+        setValues({...values, [name]: value });
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        setParams({ ...params, ...values });
+    };
+ 
     return (
         <section className={styles.wrapper}>
-            <h2 className={styles.title}>SHOES</h2>
+            <h2 className={styles.title}>{cat}</h2>
 
             <form 
             className={styles.filters}
-            onSubmit={() => {}}
+            onSubmit={handleSubmit}
             >
                 <div className={styles.filter}>
                     <input
@@ -57,7 +74,7 @@ const Category = () => {
 
                 <div className={styles.filter}>
                     <input
-                    type="numder"
+                    type="number"
                     name="price_min" 
                     placeholder="0"
                     onChange={handleChange}
@@ -67,7 +84,7 @@ const Category = () => {
 
                 <div className={styles.filter}>
                     <input
-                    type="numder"
+                    type="number"
                     name="price_max" 
                     placeholder="0"
                     onChange={handleChange}
@@ -91,7 +108,7 @@ const Category = () => {
                 title="" 
                 products={data} 
                 style={{ padding: 0 }} 
-                amount={data.length}/>
+                amount={20}/>
             )}
 
         </section>

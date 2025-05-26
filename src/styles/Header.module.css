@@ -51,18 +51,18 @@
     margin-left: 40px;
 }
 
-.input {
+/* .input {
     width: 100%;
-}
+} */
 
-input {
+.input input {
     padding: 5px 30px;
     /* padding: 10px 45px 10px 35px; */
     background-color: #191919;
     border: none;
     font-family: "Montserrat", sans-serif;
     color: white;
-    width: 100%;
+    /* width: 100%; */
 }
 
 input::placeholder {

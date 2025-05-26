@@ -34,9 +34,6 @@ const Products = ({ title, style = {}, products = [], amount }) => {
            ))} 
             </div>
 
-
-
-
         </section>
     )
 }

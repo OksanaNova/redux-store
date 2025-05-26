@@ -13,12 +13,14 @@ h2 {
 
 .list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 10px;
 }
 
 .product {
-    flex: 1;
+    /* flex: 1; */
+    width: 250px;
     background-color: #212123;
     border-radius: 15px;
     text-decoration: none;
@@ -79,8 +81,6 @@ h2 {
     font-size: 13px;
     text-decoration: line-through;
 }
-
-
 
 .purchases {
     color: #576067;
