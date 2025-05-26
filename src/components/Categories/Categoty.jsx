@@ -17,37 +17,36 @@ const Category = () => {
         title: "",
         price_min: 0,
         price_max: 0
-    }
+    };
 
     const defaultParams = {
-        title: "",
+        categoryId: id,
         limit: 5,
         offset: 0,
         ...defaultValues
     };
 
+    const [isEnd, setEnd] = useState(false);
     const [cat, setCat] = useState('');
     const [items, setItems] = useState([]);
     const [values, setValues] = useState(defaultValues);
     const [params, setParams] = useState(defaultParams);
 
-    const { data, isLoading, isSuccess } = useGetProductsQuery(params);
+    const { data = [], isLoading, isSuccess } = useGetProductsQuery(params);
 
     useEffect(() => {
         if(!id) return;
 
-        setParams({ ...defaultParams, categoryId: id })
+        setParams({ ...defaultParams, categoryId: id });
     }, [id]);
 
     useEffect(() => {
         if(!isLoading) return;
 
-        const products = Object.values(data);
+        if(!data.length) return setEnd(true);
 
-        if(!products.length) return;
-
-        setItems((_items) => [..._items, ...products])
-    }, [data, isLoading])
+        setItems((_items) => [..._items, ...data]);
+    }, [data, isLoading]);
 
     useEffect(() => {
         if(!id || !list.length) return;
@@ -64,7 +63,9 @@ const Category = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        setParams({ ...params, ...values });
+        setItems([]);
+        setEnd(false);
+        setParams({ ...defaultParams, ...values });
     };
  
     return (
@@ -111,7 +112,7 @@ const Category = () => {
 
             {isLoading ? (
                 <div className="preloader">Loading...</div>
-            ) : !isSuccess || !data.length ? (
+            ) : !isSuccess || !items.length ? (
                 <div className={styles.back}>
                     <span>No results</span>
                     <button>Reset</button>
@@ -122,6 +123,18 @@ const Category = () => {
                 products={items} 
                 style={{ padding: 0 }} 
                 amount={items.length}/>
+            )}
+
+            {!isEnd && (
+                <div className={styles.more}>
+                    <button 
+                    onClick={() => 
+                        setParams({ ...params, offset: params.offset + params.limit })
+                        }
+                    >
+                        See more
+                    </button>
+                </div>
             )}
 
         </section>
