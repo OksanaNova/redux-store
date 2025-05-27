@@ -27,7 +27,7 @@ const Category = () => {
     };
 
     const [isEnd, setEnd] = useState(false);
-    const [cat, setCat] = useState('');
+    const [cat, setCat] = useState(null);
     const [items, setItems] = useState([]);
     const [values, setValues] = useState(defaultValues);
     const [params, setParams] = useState(defaultParams);
@@ -37,12 +37,14 @@ const Category = () => {
     useEffect(() => {
         if(!id) return;
 
+        setValues(defaultValues);
+        setItems([]);
+        setEnd(false);
         setParams({ ...defaultParams, categoryId: id });
     }, [id]);
 
     useEffect(() => {
-        if(!isLoading) return;
-
+        // if(!isLoading) return;
         if(!data.length) return setEnd(true);
 
         setItems((_items) => [..._items, ...data]);
@@ -51,12 +53,12 @@ const Category = () => {
     useEffect(() => {
         if(!id || !list.length) return;
         
-        const { name } = list.find((item) => item.id === id * 1);
+        const category = list.find((item) => item.id === id * 1);
 
-        setCat(name);
+        setCat(category);
     }, [list, id])
 
-    const handleChange = ({ target: {value, name} }) => {
+    const handleChange = ({ target: { value, name } }) => {
         setValues({...values, [name]: value });
     };
 
@@ -70,7 +72,7 @@ const Category = () => {
  
     return (
         <section className={styles.wrapper}>
-            <h2 className={styles.title}>{cat}</h2>
+            <h2 className={styles.title}>{cat?.name}</h2>
 
             <form 
             className={styles.filters}
@@ -94,6 +96,8 @@ const Category = () => {
                     onChange={handleChange}
                     value={values.price_min}
                     />
+
+                    <span>Price from</span>
                 </div>
 
                 <div className={styles.filter}>
@@ -104,6 +108,8 @@ const Category = () => {
                     onChange={handleChange}
                     value={values.price_max}
                     />
+
+                    <span>Price to</span>
                 </div>
 
                 <button type="submit" hidden />
