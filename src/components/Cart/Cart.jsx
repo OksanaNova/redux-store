@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
+import { sumBy } from "../../utils/common";
 
 import styles from "../../styles/Cart.module.css";
 
 import TRASH from '../../images/trash-can.svg';
+
 
 const Cart = () => {
 
@@ -50,10 +52,14 @@ const Cart = () => {
                 </div>
 
                 <div className={styles.actions}>
-                    <div className={styles.total}>
+                    <div className={styles.last}>
                         TOTAL PRICE: {" "}
-                        <span></span>
+                        <span>
+                            ${sumBy(cart.map(item => item.price * item.quantity))}
+                        </span>
                     </div>
+
+                    <button className={styles.proceed}>Proceed to checkout</button>
                 </div>
             </>
             )}
