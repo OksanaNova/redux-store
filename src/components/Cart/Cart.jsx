@@ -10,6 +10,7 @@ import TRASH from '../../images/trash-can.svg';
 const Cart = () => {
 
     const dispatch = useDispatch();
+    
     const { cart } = useSelector(({ user }) => user);
     // const cart = useSelector((state) => state.user.cart);
 
