@@ -69,6 +69,12 @@ const Category = () => {
         setEnd(false);
         setParams({ ...defaultParams, ...values });
     };
+
+    const handleReset = () => {
+        setValues(defaultValues);
+        setParams(defaultParams);
+        setEnd(false);
+    };
  
     return (
         <section className={styles.wrapper}>

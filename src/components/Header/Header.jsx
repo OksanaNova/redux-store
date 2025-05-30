@@ -100,7 +100,7 @@ const Header = () => {
                 </form>
 
                 <div className={styles.account}>
-                    <Link to={ROUTES.HOME} className={styles.favorites}>
+                    <Link to={ROUTES.FAVORITES} className={styles.favorites}>
                         <img src={FAVORITES} alt="favorites" className={styles.icon_fav} />
                     </Link>
 
