@@ -23,7 +23,7 @@ const Header = () => {
 
     const [searchValue, setSearchValue] = useState("");
 
-    const { currentUser } = useSelector(({ user }) => user );
+    const { currentUser, cart } = useSelector(({ user }) => user );
 
     const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
 
@@ -97,7 +97,6 @@ const Header = () => {
                             })
                         )}
                         </div>}
-
                 </form>
 
                 <div className={styles.account}>
@@ -107,7 +106,7 @@ const Header = () => {
 
                     <Link to={ROUTES.CART} className={styles.cart}>
                         <img src={CART} alt="cart" className={styles.icon_cart}/>
-                        <span className={styles.count}>2</span>
+                        {!!cart.length && (<span className={styles.count}>{cart.length}</span>)}
                     </Link>
                 </div>
             </div>

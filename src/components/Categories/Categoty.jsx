@@ -121,7 +121,7 @@ const Category = () => {
             ) : !isSuccess || !items.length ? (
                 <div className={styles.back}>
                     <span>No results</span>
-                    <button>Reset</button>
+                    <button onClick={handleReset}>Reset</button>
                 </div>
             ) : (
                 <Products 
