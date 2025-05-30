@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { sumBy } from "../../utils/common";
 import { addItemToCart, removeItemFromCart } from "../../redux/user/userSlice";
 
+import Swal from "sweetalert2";
+
 import styles from "../../styles/Cart.module.css";
 
 import TRASH from '../../images/trash-can.svg';
@@ -10,7 +12,7 @@ import TRASH from '../../images/trash-can.svg';
 const Cart = () => {
 
     const dispatch = useDispatch();
-    
+
     const { cart } = useSelector(({ user }) => user);
     // const cart = useSelector((state) => state.user.cart);
 
@@ -66,7 +68,22 @@ const Cart = () => {
 
                             <div className={styles.total}>${price * quantity}</div>
 
-                            <div className={styles.delete} onClick={() => removeItem(item.id)}>
+                            <div 
+                            className={styles.delete} 
+
+                            onClick={() => {
+                                Swal.fire({
+                                    title: "Are you sure you want to delete this product?",
+                                    icon: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonColor: "#3085d6",
+                                    cancelButtonColor: "#d33",
+                                    confirmButtonText: "Yes, delete it!"
+                                }).then((result) => {
+                                    if (result.isConfirmed) removeItem(item.id);
+                                })
+                            }}   
+                            >
                                 <img src={TRASH} alt="delete"/>
                             </div>
                         </div>
