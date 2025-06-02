@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import styles from "../../styles/Cart.module.css";
 
 import TRASH from '../../images/trash-can.svg';
+import { useLocalStorage } from "../../utils/useLocalStorage";
 
 
 const Cart = () => {
@@ -15,6 +16,8 @@ const Cart = () => {
 
     const { cart } = useSelector(({ user }) => user);
     // const cart = useSelector((state) => state.user.cart);
+
+    useLocalStorage(cart, 'cart');
 
     const changeQuantity = (item, quantity) => {
         dispatch(addItemToCart({...item, quantity}))

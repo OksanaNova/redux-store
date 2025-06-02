@@ -54,12 +54,17 @@ const addCurrentUser = (state, { payload }) => {
     state.currentUser = payload;
 };
 
+const getFromLocalStorage = (key) => {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : [];
+};
+
 const userSlice = createSlice({
     name: 'user',
     initialState: {
         currentUser: null,
-        cart: [],
-        favorites: [],
+        cart: getFromLocalStorage('cart'),
+        favorites: getFromLocalStorage('favorites'),
         isLoading: false,
         formType: "signup",
         showForm: false,

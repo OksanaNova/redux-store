@@ -4,6 +4,7 @@ import { removeItemFromFavorites, removeAllFromFavorites } from "../../redux/use
 import styles from "../../styles/Cart.module.css";
 
 import TRASH from '../../images/trash-can.svg';
+import { useLocalStorage } from "../../utils/useLocalStorage";
 
 
 const Favorites = () => {
@@ -12,6 +13,8 @@ const Favorites = () => {
 
     // const { favorites } = useSelector(({ user }) => user);
     const favorites = useSelector((state) => state.user.favorites);
+
+    useLocalStorage(favorites, 'favorites');
 
     const removeItem = (id) => {
         dispatch(removeItemFromFavorites(id))
