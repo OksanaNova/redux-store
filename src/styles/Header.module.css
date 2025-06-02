@@ -6,12 +6,10 @@
     width: 80%;
     padding: 20px 40px;
 }
-
 .logo {
     flex: 1;
     /* margin-left: 20px; */
 }
-
 .info {
     display: flex;
     justify-content: space-between;
@@ -19,13 +17,11 @@
     flex: 3;
     /* margin-right: 20px; */
 }
-
 .user {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .avatar {
     width: 30px;
     height: 40px;
@@ -34,11 +30,9 @@
     background-size: cover;
     border-radius: 50%;
 }
-
 .avatar, .username {
     padding: 0 10px;
 }
-
 .form {
     display: flex;
     justify-content: space-between;
@@ -50,11 +44,6 @@
     width: 400px;
     margin-left: 40px;
 }
-
-/* .input {
-    width: 100%;
-} */
-
 .input input {
     padding: 5px 30px;
     /* padding: 10px 45px 10px 35px; */
@@ -64,15 +53,12 @@
     color: white;
     /* width: 100%; */
 }
-
 input::placeholder {
   color: #616E74;
 }
-
 .icon {
     position: absolute;
 }
-
 .box {
     position: absolute;
     top: 120%;
@@ -87,7 +73,6 @@ input::placeholder {
     z-index: 10;
     transition: all 0.3s ease;
 }
-
 .item {
     display: flex;
     align-items: center;
@@ -95,11 +80,9 @@ input::placeholder {
     text-decoration: none;
     color: #fff;
 }
-
 .item:hover {
   background-color: #383838;
 }
-
 .image {
   width: 40px;
   height: 40px;
@@ -108,17 +91,14 @@ input::placeholder {
   border-radius: 5px;
   margin-right: 12px;
 }
-
 .account {
     display: flex;
     justify-content: space-between;
     width: 65px;
 }
-
 .cart {
     position: relative;
 }
-
 .count {
     background-color: #6C3EB8;
     border-radius: 50%;
@@ -128,6 +108,44 @@ input::placeholder {
     bottom: -2px;
     right: 0;
     padding: 2px 3px;
+}
+
+@media all and (max-width: 1500px) {
+
+    .header {
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .form {
+        width: 250px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .info {
+        width: 100%;
+    }
+}
+@media all and (max-width: 550px) {
+    .info {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
+    .account {
+        order: -1;
+    }
+    .form {
+        width: 350px;
+        align-self: center;
+        margin: 0;
+    }
 }
 
 

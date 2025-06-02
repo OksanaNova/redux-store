@@ -18,3 +18,10 @@ body {
     width: 80%;
     margin: 0 auto;
 }
+
+@media all and (max-width: 1500px) {
+
+    .container {
+        width: 90%;
+    }
+}

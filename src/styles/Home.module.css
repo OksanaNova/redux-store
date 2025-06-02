@@ -118,7 +118,25 @@
     .image {
         width: 250px;
     }
+    .banner {
+        height: 350px;
+    }
 }
+
+@media all and (max-width: 700px) {
+
+    .banner {
+        height: 250px;
+    }
+}
+
+@media all and (max-width: 500px) {
+
+    .banner {
+        height: 200px;
+    }
+}
+
 
 
 
