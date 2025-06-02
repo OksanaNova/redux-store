@@ -8,26 +8,22 @@
     border-radius: 5px;
     margin-top: 20px;
 }
-
 .title {
-    color: #212121;
+    color: #6d787d;
     font-size: 180px;
     font-weight: 900;
     text-align: center;
     margin-bottom: 40px;
 }
-
 .subtitle {
     color: #616E74;
     font-weight: 500;
 }
-
 .head {
     font-size: 42px;
     margin: 0;
     text-transform: uppercase;
 }
-
 .button {
     font-size: 16px;
     font-weight: 500;
@@ -40,22 +36,18 @@
     border: none;
     margin-top: 10px;
 }
-
 .button:hover {
     background-color: #8B57C6;
 }
-
 .image img {
     width: 100%;
 }
-
 .image {
     position: absolute;
     right: 40px;
     bottom: -20px;
     width: 400px;
 }
-
 .banner {
     position: relative;
     height: 500px;
@@ -63,7 +55,6 @@
     margin-top: 20px;
     border-radius: 5px;
 }
-
 .banner::before {
     content: "";
     position: absolute;
@@ -74,7 +65,6 @@
     filter: grayscale(100%) brightness(90%);
     z-index: 1;
 }
-
 .banner button {
     position: absolute;
     z-index: 2;
@@ -83,57 +73,80 @@
     width: 30%;
 }
 
-@media all and (max-width: 1700px) {
+@media all and (max-width: 1830px) {
 
     .title {
-        font-size: 100px;
+        font-size: 140px;
     }
 }
-
-@media all and (max-width: 1500px) {
-
-    .title {
-        font-size: 80px;
-    }
-}
-
 @media all and (max-width: 1300px) {
 
     .title {
-        font-size: 70px;
+        font-size: 110px;
     }
 }
-
-@media all and (max-width: 1100px) {
+@media all and (max-width: 1050px) {
 
     .title {
-        font-size: 60px;
+        font-size: 100px;
     }
     .head {
         font-size: 25px;
     }
     .text {
-        margin-top: 50px;
+        margin-top: 10px;
     }
     .image {
         width: 250px;
+        bottom: 30px;
     }
-    .banner {
+    .banner, .poster {
         height: 350px;
     }
 }
-
-@media all and (max-width: 700px) {
-
-    .banner {
-        height: 250px;
+@media all and (max-width: 970px) {
+    .title {
+        font-size: 80px;
     }
 }
+@media all and (max-width: 800px) {
 
-@media all and (max-width: 500px) {
+    .banner, .poster {
+        height: 250px;
+    }
+    .title {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    .image {
+        width: 200px;
+        bottom: 20px;
+    }
+}
+@media all and (max-width: 650px) {
 
-    .banner {
+    .banner, .poster {
         height: 200px;
+    }
+    .head {
+        font-size: 18px;
+    }
+    .title {
+        font-size: 45px;
+    }
+    .image {
+        width: 150px;
+    }
+}
+@media all and (max-width: 550px) {
+    .image {
+        width: 100px;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .head {
+        font-size: 16px;
     }
 }
 

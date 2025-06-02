@@ -8,14 +8,12 @@
 }
 .logo {
     flex: 1;
-    /* margin-left: 20px; */
 }
 .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex: 3;
-    /* margin-right: 20px; */
 }
 .user {
     display: flex;
@@ -46,12 +44,10 @@
 }
 .input input {
     padding: 5px 30px;
-    /* padding: 10px 45px 10px 35px; */
     background-color: #191919;
     border: none;
     font-family: "Montserrat", sans-serif;
     color: white;
-    /* width: 100%; */
 }
 input::placeholder {
   color: #616E74;
@@ -116,13 +112,11 @@ input::placeholder {
         width: 90%;
     }
 }
-
 @media all and (max-width: 1100px) {
     .form {
         width: 250px;
     }
 }
-
 @media all and (max-width: 800px) {
     .header{
         flex-direction: column;

@@ -7,7 +7,6 @@
     background-color: rgba(15, 15, 15, 0.8);
     z-index: 1000;
 }
-
 .wrapper {
     position: fixed;
     top: 0;
@@ -38,24 +37,20 @@
     right: 20px;
     cursor: pointer;
 }
-
 .close:hover {
     scale: 1.1;
 }
-
 .title {
     color: #fff;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 30px;
 }
-
 .form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .group input {
     width: 90%;
     padding: 10px 20px;
@@ -66,26 +61,21 @@
     color: #fff;
     outline: none;
 }
-
 .group input::placeholder {
     color: #616E74;
 }
-
 .group input:focus {
     outline: 2px solid #9147ff;
 }
-
 .link {
     font-size: 16px;
     color: #616E74;
     text-align: center;
     cursor: pointer;
 }
-
 .link:hover {
     color: #fff;
 }
-
 .submit {
     font-size: 16px;
     font-weight: 500;
@@ -97,7 +87,12 @@
     color: #fff;
     cursor: pointer;
 }
-
 .submit:hover {
     background-color: #8B57C6;
+}
+
+@media all and (max-width: 500px) {
+    .wrapper {
+        width: 90%;
+    }
 }

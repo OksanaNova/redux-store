@@ -6,7 +6,6 @@ import { updateUser } from "../../redux/user/userSlice";
 import styles from "../../styles/Profile.module.css";
 
 
-
 const Profile = () => {
 
     const dispatch = useDispatch();
