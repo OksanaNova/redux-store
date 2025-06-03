@@ -12,6 +12,7 @@
 
 li {
     list-style: none;
+    text-align: center;
 }
 
 .link {
@@ -29,5 +30,19 @@ li {
 
 .active {
     color: #8B57C6;
+}
+
+@media all and (max-width: 1500px) {
+
+    .link {
+        font-size: 18px;
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    .link {
+        font-size: 16px;
+    }
 }
 

@@ -148,6 +148,10 @@
     .head {
         font-size: 16px;
     }
+    .banner button {
+        width: 45%;
+        left: 30%;
+    }
 }
 
 

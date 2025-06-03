@@ -4,7 +4,7 @@
     align-items: center;
     margin: 0 auto;
     width: 80%;
-    padding: 20px 40px;
+    padding: 20px;
 }
 .logo {
     flex: 1;
@@ -136,7 +136,7 @@ input::placeholder {
         order: -1;
     }
     .form {
-        width: 350px;
+        width: 300px;
         align-self: center;
         margin: 0;
     }

@@ -22,16 +22,24 @@
 }
 
 .logo {
-    margin-left: 25px;
+    padding-left: 25px;
 }
     
 .socials {
-    margin-right: 25px;
+    padding-right: 25px;
+}
+
+@media all and (max-width: 600px) {
+
 }
 
 @media all and (max-width: 1500px) {
 
     .footer {
         width: 90%;
+        flex-direction: column;
+    }
+    .socials, .logo {
+        padding: 0;
     }
 }

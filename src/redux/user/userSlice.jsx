@@ -56,7 +56,7 @@ const setToLocalStorage = (key, value) => {
 
 const addCurrentUser = (state, { payload }) => {
     state.currentUser = payload;
-    setToLocalStorage('currentUser', JSON.stringify(payload));
+    setToLocalStorage('currentUser', payload);
 };
 
 const getFromLocalStorage = (key) => {
