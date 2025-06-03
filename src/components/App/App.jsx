@@ -5,7 +5,7 @@ import AppRoutes from "../Routes/AppRoutes";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
-import UserForm from "../User/userForm";
+import UserForm from "../User/UserForm";
 
 import { getCategories } from "../../redux/categories/categoriesSlice";
 import { getProducts } from '../../redux/products/productsSlice';
