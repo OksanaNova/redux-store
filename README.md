@@ -18,11 +18,11 @@ A responsive e-commerce platform built with React, Redux Toolkit, and RESTful AP
 
 ## 📸 Screenshots
 
-![Screenshot 1](./src/assets/screenshot1.PNG)  
-![Screenshot 2](./src/assets/screenshot2.PNG)  
-![Screenshot 3](./src/assets/screenshot3.PNG)  
-![Screenshot 4](./src/assets/screenshot4.PNG)  
-![Screenshot 5](./src/assets/screenshot5.PNG)  
+![](./src/assets/screenshot1.png)  
+![](./src/assets/screenshot2.png)  
+![](./src/assets/screenshot3.png)  
+![](./src/assets/screenshot4.png)  
+![](./src/assets/screenshot5.png)  
 
 ---
 
