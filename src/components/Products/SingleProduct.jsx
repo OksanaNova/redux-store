@@ -48,8 +48,6 @@ const SingleProduct = () => {
                 <Products products={related} amount={5} title="Related products"/>
             </>
         )
-
-
 }
 
 export default SingleProduct

@@ -10,8 +10,6 @@ import UserForm from "../User/userForm";
 import { getCategories } from "../../redux/categories/categoriesSlice";
 import { getProducts } from '../../redux/products/productsSlice';
 
-
-
 const App = () => {
 
     const dispatch = useDispatch();

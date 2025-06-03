@@ -11,10 +11,9 @@ const Favorites = () => {
 
     const dispatch = useDispatch();
 
-    // const { favorites } = useSelector(({ user }) => user);
     const favorites = useSelector((state) => state.user.favorites);
 
-    useLocalStorage(favorites, 'favorites');
+    useLocalStorage('favorites', favorites);
 
     const removeItem = (id) => {
         dispatch(removeItemFromFavorites(id))

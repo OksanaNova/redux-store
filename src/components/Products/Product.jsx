@@ -117,7 +117,6 @@ const Product = (item) => {
 
                     <Link to={ROUTES.HOME}>Back</Link>
                 </div>         
-
             </div>
         </section>
     )

@@ -50,21 +50,26 @@ export const updateUser = createAsyncThunk(
     }
 );
 
+const setToLocalStorage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
 const addCurrentUser = (state, { payload }) => {
     state.currentUser = payload;
+    setToLocalStorage('currentUser', JSON.stringify(payload));
 };
 
 const getFromLocalStorage = (key) => {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : [];
+    return data ? JSON.parse(data) : null;
 };
 
 const userSlice = createSlice({
     name: 'user',
     initialState: {
-        currentUser: null,
-        cart: getFromLocalStorage('cart'),
-        favorites: getFromLocalStorage('favorites'),
+        currentUser: getFromLocalStorage('currentUser') || null,
+        cart: getFromLocalStorage('cart') || [],
+        favorites: getFromLocalStorage('favorites') || [],
         isLoading: false,
         formType: "signup",
         showForm: false,

@@ -24,7 +24,7 @@ const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
         const isNotEmpty = Object.values(values).every((val) => val);
 
         if(!isNotEmpty) return;
-console.log("Login values:", values);
+
         dispatch(loginUser(values));
         closeForm();
     };

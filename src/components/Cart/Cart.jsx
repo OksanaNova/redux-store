@@ -15,9 +15,8 @@ const Cart = () => {
     const dispatch = useDispatch();
 
     const { cart } = useSelector(({ user }) => user);
-    // const cart = useSelector((state) => state.user.cart);
 
-    useLocalStorage(cart, 'cart');
+    useLocalStorage('cart', cart);
 
     const changeQuantity = (item, quantity) => {
         dispatch(addItemToCart({...item, quantity}))
@@ -73,7 +72,6 @@ const Cart = () => {
 
                             <div 
                             className={styles.delete} 
-
                             onClick={() => {
                                 Swal.fire({
                                     title: "Are you sure you want to delete this product?",

@@ -7,7 +7,6 @@ import styles from "../../styles/Category.module.css";
 
 import Products from "../Products/Products";
 
-
 const Category = () => {
 
     const { id } = useParams();
@@ -15,8 +14,8 @@ const Category = () => {
 
     const defaultValues = {
         title: "",
-        price_min: 0,
-        price_max: 0
+        price_min: "",
+        price_max: ""
     };
 
     const defaultParams = {
@@ -44,7 +43,6 @@ const Category = () => {
     }, [id]);
 
     useEffect(() => {
-        // if(!isLoading) return;
         if(!data.length) return setEnd(true);
 
         setItems((_items) => [..._items, ...data]);
@@ -101,6 +99,7 @@ const Category = () => {
                     placeholder="0"
                     onChange={handleChange}
                     value={values.price_min}
+                    required
                     />
 
                     <span>Price from</span>
@@ -113,6 +112,7 @@ const Category = () => {
                     placeholder="0"
                     onChange={handleChange}
                     value={values.price_max}
+                    required
                     />
 
                     <span>Price to</span>

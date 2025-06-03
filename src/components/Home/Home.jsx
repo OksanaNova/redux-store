@@ -18,18 +18,11 @@ const Home = () => {
         categories 
     } = useSelector((state) => state);
 
-    // const products = useSelector((state) => state.products);
-    // const myProducts = products.list;
-
-    // const categories = useSelector((state) => state.categories);
-    // const myCategories = categories.list;
-
     useEffect(() => {
 
         if(!list.length) return;
         dispatch(filterByPrice(100))
     }, [dispatch, list.length])
-
 
     return (
         <div>

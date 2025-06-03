@@ -10,7 +10,6 @@ const Sidebar = () => {
 
     return (
         <section className={styles.sidebar}>
-
             <nav>
                 <ul className={styles.menu}>
                     {list.map(({ id, name }) => (
@@ -22,10 +21,8 @@ const Sidebar = () => {
                         </NavLink>
                     </li>
                     ))}
-
                 </ul>
             </nav>
-
         </section>
     )
 }
