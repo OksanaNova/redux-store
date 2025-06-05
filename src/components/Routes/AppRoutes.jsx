@@ -2,12 +2,12 @@ import { Route, Routes } from "react-router-dom";
 
 import { ROUTES } from "../../utils/routes";
 
-import Home from '../Home/Home';
-import SingleProduct from "../Products/SingleProduct";
-import Profile from "../Profile/Profile";
-import SingleCategory from "../Categories/SingleCategory";
-import Cart from "../Cart/Cart";
-import Favorites from "../Favorites/Favorites";
+import Home from '../pages/Home/Home';
+import SingleProduct from "../pages/Products/SingleProduct";
+import Profile from "../pages/Profile/Profile";
+import SingleCategory from "../layout/Categories/SingleCategory";
+import Cart from "../pages/Cart/Cart";
+import Favorites from "../pages/Favorites/Favorites";
 
 const AppRoutes = () => (
 
